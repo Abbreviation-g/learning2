@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            allPopups="false"
+            locationURI="toolbar:org.eclipse.ui.main.toolbar?after=additions">
+         <toolbar
+               id="com.joshvm.test.toolbar1">
+            <command
+                  commandId="com.joshvm.test.command1"
+                  icon="icons/icon_16.png"
+                  style="pulldown">
+            </command>
+            <command
+                  commandId="com.joshvm.test.command2"
+                  style="pulldown">
+            </command>
+         </toolbar>
+      </menuContribution>
+      <!--
+      <menuContribution
+            allPopups="false"
+            locationURI="menu:com.joshvm.test.command1">
+         <command
+               commandId="com.joshvm.test.command1"
+               icon="icons/icon_16.png"
+               style="pulldown">
+         </command>
+         <command
+               commandId="com.joshvm.test.command2"
+               style="push">
+         </command>
+         <command
+               commandId="com.joshvm.test.command3"
+               style="push">
+         </command>
+      </menuContribution>
+      -->
+   </extension>
+   <extension
+         point="org.eclipse.ui.commands">
+      <command
+            id="com.joshvm.test.command1"
+            name="Test Menu">
+      </command>
+      <command
+            id="com.joshvm.test.command2"
+            name="Test Menu2">
+      </command>
+      <command
+            id="com.joshvm.test.command3"
+            name="Test Menu3">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.startup">
+      <startup
+            class="com.joshvm.test.TestStartup">
+      </startup>
+   </extension>
+   <extension
+         point="org.eclipse.ui.views">
+      <view
+            class="com.joshvm.test.view.JoshTestViewPart"
+            id="com.joshvm.test.view"
+            name="TestViewPart"
+            restorable="true">
+      </view>
+   </extension>
+   <extension
+         point="org.eclipse.ui.handlers">
+      <handler
+            class="com.joshvm.test.handler.TestHandler"
+            commandId="com.joshvm.test.command1">
+      </handler>
+      <handler
+            class="com.joshvm.test.handler.TestHandler2"
+            commandId="com.joshvm.test.command2">
+      </handler>
+   </extension>
+
+</plugin>
